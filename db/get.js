@@ -68,32 +68,3 @@ module.exports.weatherCurrent = async function(_city, callback) {
     }
   });
 };
-
-module.exports.isApiKeyValid = async function(token_, callback) {
-  var collection = db.collection("tokens");
-  var query = {
-    _id: token_
-  };
-  collection.findOne(query, function(err, queryResponse) {
-  if (err) {}
-  });
-};
-
-
-module.exports.generateApiKey = async function(callback) {
-  try {
-    var apiKeyObject = {};
-    // Edit Time and Name for future queries.
-    apiKeyObject.timestamp = tools.currentTimeUnix();
-    weather.requests = weather.name.toLowerCase();
-    weather._id = crypto.randomBytes(16).toString("hex");
-
-    weather.save(function(err) {
-      if (err) throw err;
-      console.log("Created Weather Entry on MongoDB");
-    });
-  } catch {
-    console.log("Could not parse and save weather schema to mongoDB");
-    // DBLOG
-  }
-};

@@ -19,8 +19,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./api/routes/weatherRoutes'); //importing route
-routes(app); //register the route
+var weatherRoutes = require('./api/routes/weatherRoutes'); //importing route
+var authTokenRoutes = require('./api/routes/authTokenRoutes')
+weatherRoutes(app); //register the route
+authTokenRoutes(app); 
 
 
 app.listen(port);
