@@ -2,13 +2,16 @@
 
 var mongoose = require('mongoose'),
 weather = mongoose.model('weather');
-
+const get = require('../../db/get');
 
 exports.by_city_name = function(req, res) {
-  weather.findByName(req.params.taskId, function(err, task) {
-    if (err)
+console.log("ya");
+  get.weatherCurrent("Melbourne", function(err, response) {
+    if (err) {
       res.send(err);
-    res.json(task);
+    } else {
+      res.json(response);
+    }
   });
 };
 
@@ -18,4 +21,5 @@ exports.by_city_id = function(req, res) {
       res.send(err);
     res.json(task);
   });
+
 };
