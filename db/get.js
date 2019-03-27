@@ -13,7 +13,7 @@ var tools = require("../tools");
 const crypto = require("crypto");
 
 // Variables
-const un_err = '{cod: "404", message: "We Don\'t Know what went wrong :/"}';
+const un_err = {"cod": "404", "message": "We Don\'t Know what went wrong :/"};
 
 // Get Functions
 // Create query for specified city, to the current hour.
@@ -30,16 +30,17 @@ module.exports.weatherCurrent = async function(_city, callback) {
     // if mongoDB responds with error - eg. not existent data.
     if (err || queryResponse == null) {
       // Source Will be from: OpenWeatherMap
-      console.log("Source Will be from: OpenWeatherMap"); // Rem0ve
+      //rem0ve  console.log("Source Will be from: OpenWeatherMap"); // Rem0ve
       external.OWM_getWeatherCurrent(_city, function(error_, response) {
         // If error recieved from  OpenWeatherMap
         if (error_ || response == null || response.cod != 200) {
           // If reponse variable contains no error explanation: use un_error (Unknown Error;)
-          if (response != null) {
+          if (response.cod != null) {
             postback = un_err;
           }
           error = true;
         } else {
+
           // If No errors Sanatise and post
           postback = tools.json(response);
           if (postback.error != null) {
@@ -55,7 +56,7 @@ module.exports.weatherCurrent = async function(_city, callback) {
       });
     } else {
       // Source Will be directly from: MongoDB
-      console.log("Source Will be from: MongoDB"); // Rem0ve
+      //rem0ve  console.log("Source Will be from: MongoDB"); // Rem0ve
       postback = tools.json(queryResponse);
       if (postback.error != null) {
         postback = postback.error;

@@ -17,10 +17,10 @@ module.exports.Weather = async function(json) {
 
     weather.save(function(err) {
       if (err) throw err;
-      console.log("Created Weather Entry on MongoDB");
+      //rem0ve  console.log("Created Weather Entry on MongoDB");
     });
   } catch {
-    console.log("Could not parse and save weather schema to mongoDB");
+    //rem0ve  console.log("Could not parse and save weather schema to mongoDB");
     // DBLOG
   }
 }

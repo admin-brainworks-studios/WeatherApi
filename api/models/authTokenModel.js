@@ -10,7 +10,9 @@ var authTokenModelSchema = new Schema({
  timestamp: Number,        // Time Of Token Generation and
  requests: Number,         // Request Count
 _id: String,               // Token
-})
+}, {
+  versionKey: false
+}); // We can set versionKey to false because _id generation is time wraped.
 mongoose.model('tokens', authTokenModelSchema, 'tokens')
 
 

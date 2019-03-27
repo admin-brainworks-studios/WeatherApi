@@ -5,10 +5,10 @@ weather = mongoose.model('weather');
 const get = require('../../db/get');
 
 exports.by_city_name = function(req, res) {
-console.log("ya");
-  get.weatherCurrent("Melbourne", function(err, response) {
+//rem0ve  console.log("ya");
+  get.weatherCurrent(req.params.cityName, function(err, response) {
     if (err) {
-      res.send(err);
+      res.json(response);
     } else {
       res.json(response);
     }

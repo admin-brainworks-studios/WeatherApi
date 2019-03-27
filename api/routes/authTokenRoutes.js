@@ -11,11 +11,15 @@ module.exports = function(app) {
   app.route('/api/generateToken')
     .get(authToken.generateApiKey);
 
+    // direct weatherRoutes
+      app.route('/api/testToken=:token')
+        .get(authToken.generateApiKey);
+
 
 app.get("/weather", function (req, res){
-  console.log("shubham batra");
+  //rem0ve  console.log("shubham batra");
    var keyword = req.query.city;
-   console.log(keyword);
+   //rem0ve  console.log(keyword);
    res.send('You sent the name "' + keyword + '".');
 });
 

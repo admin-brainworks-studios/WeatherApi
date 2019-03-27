@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 var weatherRoutes = require('./api/routes/weatherRoutes'); //importing route
 var authTokenRoutes = require('./api/routes/authTokenRoutes')
 weatherRoutes(app); //register the route
-authTokenRoutes(app); 
+authTokenRoutes(app);
 
 
 app.listen(port);

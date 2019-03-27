@@ -5,7 +5,7 @@ weather = mongoose.model('weather');
 const authToken = require('../authToken/index.js');
 
 exports.generateApiKey = function(req, res) {
-console.log("ya");
+//rem0ve  console.log("ya");
   authToken.generateApiKey(function(err, response) {
     if (err) {
       res.send(err);
@@ -14,3 +14,15 @@ console.log("ya");
     }
   });
 };
+
+exports.isApiKeyValid = function (req, res) {
+  //rem0ve  console.log("ya");
+  authToken.isApiKeyValid(function(err, response) {
+    if (err) {
+      res.json(response);
+    } else {
+      res.json(response);
+    }
+  });
+
+}
