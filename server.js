@@ -6,7 +6,7 @@ var express = require("express"),
   bodyParser = require("body-parser");
 
 
-require("./api/models/weatherModel"),
+var weather = require("./api/models/weatherModel");
 require("./db"),
 require("./external");
 

@@ -1,6 +1,3 @@
-// server.js - Written By Thomas McCoy
-// Duplicate of //server.js for testing.
-
 "use strict";
 
 var express = require("express"),
@@ -9,17 +6,17 @@ var express = require("express"),
   bodyParser = require("body-parser");
 
 
-require("./api/models/weatherModel"),
-require("./db"),
-require("./external");
+var weather = require("../api/models/weatherModel");
+require("../db"),
+require("../external");
 
 module.exports = app;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-var weatherRoutes = require("./api/routes/weatherRoutes"); //importing route
-var authTokenRoutes = require("./api/routes/authTokenRoutes");
+var weatherRoutes = require("../api/routes/weatherRoutes"); //importing route
+var authTokenRoutes = require("../api/routes/authTokenRoutes");
 weatherRoutes(app); //register the route
 authTokenRoutes(app);
 
