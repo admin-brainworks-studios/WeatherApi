@@ -1,5 +1,5 @@
 // db.js - Written By Thomas McCoy
-"use strict";
+'use strict';
 
 var mongoose = require('mongoose');
 

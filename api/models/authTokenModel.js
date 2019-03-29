@@ -1,4 +1,4 @@
-// authTokenModel.js
+// authTokenModel.js - Written By Thomas McCoy
 
 'use strict';
 var mongoose = require('mongoose');

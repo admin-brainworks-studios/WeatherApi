@@ -1,3 +1,5 @@
+// authTokenController.js - Written By Thomas McCoy
+
 'use strict';
 
 var authToken = require('../authToken/index.js');

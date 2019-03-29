@@ -1,3 +1,5 @@
+// get_tests.js - Written By Thomas McCoy
+// Duplicated dor _test directory
 "use strict";
 
 var express = require("express"),
@@ -6,7 +8,7 @@ var express = require("express"),
   bodyParser = require("body-parser");
 
 
-var weather = require("../api/models/weatherModel");
+require("../api/models/weatherModel");
 require("../db"),
 require("../external");
 

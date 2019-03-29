@@ -1,13 +1,12 @@
-"use strict";
+'use strict';
 // external.js - Written By Thomas McCoy
 // Get Requests (Parser) for MongoDB
-"use strict";
 
 // Required Imports
-var Weather = require("../api/models/weatherModel");
-var external = require("../external.js");
-var post = require("./post");
-var tools = require("../tools");
+var Weather = require('../api/models/weatherModel');
+var external = require('../external.js');
+var post = require('./post');
+var tools = require('../tools');
 
 // Variables
 const un_err = {cod: "404", message: "We Don't Know what went wrong :/"};
@@ -42,7 +41,7 @@ module.exports.weatherCurrent = async function(_city, callback) {
           } else {
             // Post Weather to MongoDB
             post.Weather(postback);
-            postback.source = "OpenWeatherMap";
+            postback.source = 'OpenWeatherMap';
           }
         }
 
@@ -54,7 +53,7 @@ module.exports.weatherCurrent = async function(_city, callback) {
       if (postback.error) {
         postback = postback.error;
       } else {
-        postback.source = "MongoDB";
+        postback.source = 'MongoDB';
       }
       callback(error, postback);
     }

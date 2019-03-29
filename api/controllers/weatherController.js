@@ -1,9 +1,11 @@
-"use strict";
+// weatherController.js - Written By Thomas McCoy
 
-var mongoose = require("mongoose"),
-  weather = mongoose.model("weather");
-const get = require("../../db/get");
-const authToken = require("../authToken/index.js");
+'use strict';
+
+var mongoose = require('mongoose'),
+  weather = mongoose.model('weather');
+const get = require('../../db/get');
+const authToken = require('../authToken/index.js');
 
 exports.by_city_name = function(req, res) {
   authToken.isApiKeyValid(req.params.tokenKey, function(err, response) {

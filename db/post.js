@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 // Required Imports
-var Weather = require("../api/models/weatherModel");
+var Weather = require('../api/models/weatherModel');
 var tools = require('../tools');
 
 module.exports.Weather = async function(json) {
@@ -15,7 +15,7 @@ module.exports.Weather = async function(json) {
       if (err) throw err;
     });
   } catch(err) {
-   console.log("Could not parse and save weather schema to mongoDB");
+   console.log('Could not parse and save weather schema to mongoDB');
     // DBLOG
   }
 }
