@@ -3,7 +3,6 @@
 'use strict';
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ObjectId = mongoose.Schema.Types.ObjectId;
 
 // weather model
 var weatherModelSchema = new Schema({
@@ -14,7 +13,6 @@ var weatherModelSchema = new Schema({
   dt: Number,         // Time of data calculation, unix, UTC
   cod: Number,        // Internal parameter
   visibility: Number, // Visibility, meter
-  source: String,     // Source ? OpenWeatherMap or MongoDB?
   coord: {
     lon: Number,      // City geo location, Loitude
     lat: Number       // City geo location, latitude
@@ -74,6 +72,5 @@ weatherModelSchema.pre('save', function(next) {
 
   next();
 });
-
 // weatherModel.js - Weather model exports
 module.exports = mongoose.model('weather', weatherModelSchema);

@@ -1,25 +1,34 @@
-'use strict';
+"use strict";
 
-var mongoose = require('mongoose'),
-weather = mongoose.model('weather');
-const get = require('../../db/get');
+var mongoose = require("mongoose"),
+  weather = mongoose.model("weather");
+const get = require("../../db/get");
+const authToken = require("../authToken/index.js");
 
 exports.by_city_name = function(req, res) {
-//rem0ve  console.log("ya");
-  get.weatherCurrent(req.params.cityName, function(err, response) {
+  authToken.isApiKeyValid(req.params.tokenKey, function(err, response) {
     if (err) {
       res.json(response);
     } else {
-      res.json(response);
+      authToken.pinRequest(req.params.tokenKey, function(err){});
+
+      get.weatherCurrent(req.params.cityName, function(err, response) {
+        res.json(response);
+      });
     }
   });
 };
 
 exports.by_city_id = function(req, res) {
-  weather.findByName(req.params.taskId, function(err, task) {
-    if (err)
-      res.send(err);
-    res.json(task);
+  authToken.isApiKeyValid(req.params.tokenKey, function(err, response) {
+    if (err) {
+      res.json(response);
+    } else {
+      authToken.pinRequest(req.params.tokenKey, function(err){});
+      
+      weather.findByName(req.params.taskId, function(err, task) {
+        res.json(response);
+      });
+    }
   });
-
 };

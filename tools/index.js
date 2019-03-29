@@ -25,8 +25,8 @@ module.exports.json = function(json_) {
   try {
   let json = JSON.parse(JSON.stringify(json_));
   return json;
-} catch {
-  return JSON.parse('{"error": "could not parse"}')
+} catch(err) {
+  return {"error": `could not parse: ${err}`};
 }
 
 }
