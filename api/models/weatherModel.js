@@ -13,6 +13,7 @@ var weatherModelSchema = new Schema({
   dt: Number,         // Time of data calculation, unix, UTC
   cod: Number,        // Internal parameter
   visibility: Number, // Visibility, meter
+  query: String,      // Lookup Query
   coord: {
     lon: Number,      // City geo location, Loitude
     lat: Number       // City geo location, latitude

@@ -17,7 +17,7 @@ const un_err = {cod: "404", message: "We Don't Know what went wrong :/"};
 module.exports.weatherCurrent = async function(_city, callback) {
   var query = {
     time: tools.currentTimeUnixZeroed(),
-    name: _city.toLowerCase()
+    query: _city.toLowerCase()
   };
   var postback = un_err;
   var error;
@@ -41,6 +41,7 @@ module.exports.weatherCurrent = async function(_city, callback) {
             postback = postback.error;
           } else {
             // Post Weather to MongoDB
+            postback.query = _city.toLowerCase();
             post.Weather(postback);
             postback.source = 'OpenWeatherMap';
           }
