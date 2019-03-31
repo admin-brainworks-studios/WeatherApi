@@ -10,7 +10,7 @@ var mongoose = require("mongoose"),
 describe("get_tests (housekeeping)", function() {
   it("Delete MongoDB Data - Matching City 'melbourne'", function(done) {
     var query = { name: "melbourne" };
-    weather.deleteOne(query, function(err, obj) {
+    weather.deleteOne(query, function(err, _) { // eslint-disable-line no-unused-vars
       expect(err).to.equal(null);
       done();
     });

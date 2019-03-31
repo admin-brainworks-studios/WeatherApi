@@ -39,7 +39,7 @@ module.exports.generateApiKey = async function(callback) {
 
 module.exports.pinRequest = async function(_token, callback) {
  try {
-    authTokenModel.findOneAndUpdate({ _id: _token }, { $inc: { requests: 1 } }, {new: true },function(err, response) {
+    authTokenModel.findOneAndUpdate({ _id: _token }, { $inc: { requests: 1 } }, {new: true },function(err, _) { // eslint-disable-line no-unused-vars
       if (err) {
         console.log("error Updating request count");
         callback(err)

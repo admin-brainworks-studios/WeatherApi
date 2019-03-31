@@ -24,7 +24,7 @@ describe("authToken_tests", function() {
   });
 
   it("isApiKeyValid", function(done) {
-    authToken.isApiKeyValid(gen_response.key, function(err, response) {
+    authToken.isApiKeyValid(gen_response.key, function(err, _) { // eslint-disable-line no-unused-vars
       expect(err).to.equal(false);
       done();
     });
