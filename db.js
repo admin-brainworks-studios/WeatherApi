@@ -2,6 +2,10 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var requireDirectory = require('require-directory');
+
+// models
+requireDirectory(module, './api/models/');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;

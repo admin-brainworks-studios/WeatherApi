@@ -12,7 +12,6 @@ _id: String,               // Token
 }, {
   versionKey: false
 }); // We can set versionKey to false because _id generation is time wraped.
-mongoose.model('tokens', authTokenModelSchema, 'tokens')
 
 
 // authTokenModel.js - authToken model exports

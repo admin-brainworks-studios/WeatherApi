@@ -37,11 +37,11 @@ module.exports.generateApiKey = async function(callback) {
   }
 };
 
-module.exports.pinRequest = async function(_token, callback) {
+module.exports.pinRequest = async function(token, callback) {
  try {
-    authTokenModel.findOneAndUpdate({ _id: _token }, { $inc: { requests: 1 } }, {new: true },function(err, response) {
+   // eslint-disable-next-line no-unused-vars
+    authTokenModel.findOneAndUpdate({ _id: token }, { $inc: { requests: 1 } }, {new: true },function(err, _) {
       if (err) {
-        console.log("error Updating request count");
         callback(err)
       } else {
         callback(null);
@@ -52,9 +52,9 @@ module.exports.pinRequest = async function(_token, callback) {
     }
 }
 
-module.exports.isApiKeyValid = async function(token_, callback) {
+module.exports.isApiKeyValid = async function(token, callback) {
   var query = {
-    _id: token_
+    _id: token
   };
   authTokenModel.findOne(query, function(err, queryResponse) {
     if (queryResponse === null || err) {

@@ -1,18 +1,10 @@
-// get_tests.js - Written By Thomas McCoy
-// Duplicated dor _test directory
 "use strict";
 
 var express = require("express"),
   app = express(),
   port = process.env.PORT || 3000,
   bodyParser = require("body-parser");
-
-
-require("../api/models/weatherModel");
-require("../db"),
-require("../external");
-
-module.exports = app;
+  require('../db');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -24,4 +16,6 @@ authTokenRoutes(app);
 
 app.listen(port);
 
-console.log("todo list RESTful API server started on: " + port);
+console.log("RESTful API server started on: " + port);
+
+module.exports = app;

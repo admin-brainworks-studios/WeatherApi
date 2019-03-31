@@ -1,13 +1,13 @@
 // external.js - Written By Thomas McCoy
 // External OpenWeatherMap API
-"use strict";
+'use strict';
 
 let fetch = require("node-fetch");
 
-let apiKey = "235b178c6ebf7e4d316cc9743a996c76";
+let apiKey = 'd6db657485d33608e9ecb2eaa0b7489d';
 
 
-// Get Current Weather from OpenWeatherMap
+// // Get Current Weather from OpenWeatherMap
 module.exports.OWM_getWeatherCurrent = async function(_city, callback) {
   try {
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${_city}&appid=${apiKey}`;
@@ -17,4 +17,5 @@ module.exports.OWM_getWeatherCurrent = async function(_city, callback) {
   } catch (err) {
     callback(err, null);
   }
+
 }

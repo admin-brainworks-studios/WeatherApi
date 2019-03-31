@@ -7,7 +7,7 @@ module.exports = {
     "browser": 1
   },
   "globals": {
-    "exampleGlobalVariable": true
+    "_": true
   },
       "rules": {
           "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]

@@ -16,6 +16,5 @@ module.exports.Weather = async function(json) {
     });
   } catch(err) {
    console.log('Could not parse and save weather schema to mongoDB');
-    // DBLOG
   }
 }

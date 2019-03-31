@@ -30,8 +30,9 @@ module.exports.weatherCurrent = async function(_city, callback) {
         if (error_ !== null) {
           // If reponse variable contains no error explanation: use un_error (Unknown Error;)
           try {
-            let a = response.cod !== null;
-          } catch (err) { postback = un_err; }
+            let _ = (response.cod != null); // eslint-disable-line no-unused-vars
+          } catch (err) {
+            postback = un_err; }
           error = true;
         } else {
           // If No errors Sanatise and post
