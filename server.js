@@ -6,7 +6,6 @@ var express = require("express"),
   bodyParser = require("body-parser");
   require('./db');
 
-require('./api/models/weatherModel'), //created model loading here
 
 
 app.use(bodyParser.urlencoded({extended: true}));

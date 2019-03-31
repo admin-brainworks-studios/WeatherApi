@@ -11,6 +11,7 @@ var mongoose = require('mongoose'),
 const get = require('../../db/get');
 const authToken = require('../authToken/index.js');
 
+
 exports.by_city_name = function(req, res) {
   authToken.isApiKeyValid(req.params.tokenKey, function(err, response) {
     if (err) {

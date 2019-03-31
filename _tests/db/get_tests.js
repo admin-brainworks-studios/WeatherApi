@@ -19,7 +19,7 @@ describe('get_tests (housekeeping)', function() {
 
 describe('get_tests', function() {
   it('Test For OpenWeatherMap', function(done) {
-    get.weatherCurrent('Melbourne', function(err, response) {
+    get.weatherCurrent('melbourne', function(err, response) {
       expect(response)
         .to.have.property('source')
         .with.equal('OpenWeatherMap');
@@ -29,7 +29,7 @@ describe('get_tests', function() {
   });
 
   it('Test For MongoDB', function(done) {
-    get.weatherCurrent('Melbourne', function(err, response) {
+    get.weatherCurrent('melbourne', function(err, response) {
       expect(response)
         .to.have.property('source')
         .with.equal('MongoDB');
