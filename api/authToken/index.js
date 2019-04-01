@@ -7,19 +7,19 @@
 */
 
 // API Key Variables
-var hours_valid = 1;
-var request_limit = 5;
+const hours_valid = 1;
+const request_limit = 5;
 
 // Required Imports
-var authTokenModel = require("../models/authTokenModel");
-var tools = require("../../tools");
-var crypto = require("crypto");
+const authTokenModel = require("../models/authTokenModel");
+const tools = require("../../tools");
+const crypto = require("crypto");
 
 module.exports.generateApiKey = async function(callback) {
   var postback = {message: "There was a problem generating the API Key"};
   try {
-    var apiKeyId = crypto.randomBytes(16).toString("hex");
-    var apiKeyObject = new authTokenModel({
+    const apiKeyId = crypto.randomBytes(16).toString("hex");
+    const apiKeyObject = new authTokenModel({
       timestamp: tools.currentTimeUnix(),
       requests: 0,
       _id: apiKeyId
@@ -53,7 +53,7 @@ module.exports.pinRequest = async function(token, callback) {
 }
 
 module.exports.isApiKeyValid = async function(token, callback) {
-  var query = {
+  let query = {
     _id: token
   };
   authTokenModel.findOne(query, function(err, queryResponse) {

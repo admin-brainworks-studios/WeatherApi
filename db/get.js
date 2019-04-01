@@ -3,10 +3,10 @@
 // Get Requests (Parser) for MongoDB
 
 // Required Imports
-var Weather = require('../api/models/weatherModel');
-var external = require('../external.js');
-var post = require('./post');
-var tools = require('../tools');
+const Weather = require('../api/models/weatherModel');
+const external = require('../external.js');
+const post = require('./post');
+const tools = require('../tools');
 
 // Variables
 const un_err = {cod: "404", message: "We Don't Know what went wrong :/"};
@@ -15,7 +15,7 @@ const un_err = {cod: "404", message: "We Don't Know what went wrong :/"};
 // Create query for specified city, to the current hour.
 
 module.exports.weatherCurrent = async function(_city, callback) {
-  var query = {
+  let query = {
     time: tools.currentTimeUnixZeroed(),
     query: _city.toLowerCase()
   };

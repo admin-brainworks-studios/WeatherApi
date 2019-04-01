@@ -1,6 +1,6 @@
 "use strict";
 
-var express = require("express"),
+const express = require("express"),
   app = express(),
   port = process.env.PORT || 3000,
   bodyParser = require("body-parser");
@@ -9,8 +9,8 @@ var express = require("express"),
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-var weatherRoutes = require("../api/routes/weatherRoutes"); //importing route
-var authTokenRoutes = require("../api/routes/authTokenRoutes");
+const weatherRoutes = require("../api/routes/weatherRoutes"); //importing route
+const authTokenRoutes = require("../api/routes/authTokenRoutes");
 weatherRoutes(app); //register the route
 authTokenRoutes(app);
 

@@ -4,7 +4,7 @@
 module.exports = function(app) {
 
 
-  var authToken = require('../controllers/authTokenController');
+  const authToken = require('../controllers/authTokenController');
 
 
   // API Key Routes

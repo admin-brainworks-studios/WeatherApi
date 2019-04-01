@@ -3,9 +3,7 @@
 'use strict';
 module.exports = function(app) {
 
-
-  var weather = require('../controllers/weatherController');
-
+  const weather = require('../controllers/weatherController');
 
 // Weather Routes
   app.route('/weather/q=:cityName&token=:tokenKey')

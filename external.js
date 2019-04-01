@@ -2,10 +2,9 @@
 // External OpenWeatherMap API
 'use strict';
 
-let fetch = require("node-fetch");
+const fetch = require("node-fetch");
 
 let apiKey = 'd6db657485d33608e9ecb2eaa0b7489d';
-
 
 // // Get Current Weather from OpenWeatherMap
 module.exports.OWM_getWeatherCurrent = async function(_city, callback) {

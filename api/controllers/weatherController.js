@@ -5,7 +5,7 @@
 */
 'use strict';
 
-var mongoose = require('mongoose'),
+const mongoose = require('mongoose'),
   weather = mongoose.model('weather');
 
 const get = require('../../db/get');

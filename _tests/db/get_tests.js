@@ -2,14 +2,14 @@
 // Chai Tests for functions held in //db/
 
 
-var expect = require('chai').expect;
+const expect = require('chai').expect;
 const get = require('../../db/get');
-var mongoose = require('mongoose'),
+const mongoose = require('mongoose'),
   weather = mongoose.model('weather');
 
 describe('get_tests (housekeeping)', function() {
   it("Delete MongoDB Data - Matching City 'melbourne'", function(done) {
-    var query = { name: 'melbourne' };
+    let query = { name: 'melbourne' };
     weather.deleteOne(query, function(err, _) { // eslint-disable-line no-unused-vars
       expect(err).to.equal(null);
       done();
@@ -23,7 +23,6 @@ describe('get_tests', function() {
       expect(response)
         .to.have.property('source')
         .with.equal('OpenWeatherMap');
-      gen_response = response;
       done();
     });
   });
@@ -33,7 +32,6 @@ describe('get_tests', function() {
       expect(response)
         .to.have.property('source')
         .with.equal('MongoDB');
-      gen_response = response;
       done();
     });
   });

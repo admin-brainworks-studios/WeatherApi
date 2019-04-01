@@ -1,8 +1,8 @@
 // db.js - Written By Thomas McCoy
 'use strict';
 
-var mongoose = require('mongoose');
-var requireDirectory = require('require-directory');
+const mongoose = require('mongoose');
+const requireDirectory = require('require-directory');
 
 // models
 requireDirectory(module, './api/models/');

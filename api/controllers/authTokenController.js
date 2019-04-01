@@ -2,7 +2,7 @@
 
 'use strict';
 
-var authToken = require('../authToken/index.js');
+const authToken = require('../authToken/index.js');
 
 exports.generateApiKey = function(req, res) {
   authToken.generateApiKey(function(err, response) {

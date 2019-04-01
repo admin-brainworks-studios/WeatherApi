@@ -1,8 +1,8 @@
 'use strict';
 
 // Required Imports
-var Weather = require('../api/models/weatherModel');
-var tools = require('../tools');
+const Weather = require('../api/models/weatherModel');
+const tools = require('../tools');
 
 module.exports.Weather = async function(json) {
   try {

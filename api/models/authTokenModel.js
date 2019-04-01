@@ -1,7 +1,7 @@
 // authTokenModel.js - Written By Thomas McCoy
 
 'use strict';
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // authToken model

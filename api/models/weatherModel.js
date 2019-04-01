@@ -1,7 +1,7 @@
  // weatherModel.js - Written By Thomas McCoy
 // Mongoose - Weather Schema
 'use strict';
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // weather model

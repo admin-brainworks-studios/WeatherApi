@@ -1,11 +1,12 @@
 // authToken_tests.js - Written By Thomas McCoy
 // Chai Tests for functions held in //api/authToken/
 
-var expect = require('chai').expect;
+const expect = require('chai').expect;
 const authToken = require('../../api/authToken/index.js');
 
 describe('authToken_tests', function() {
   var gen_response;
+  
   it('generateApiKey', function(done) {
     authToken.generateApiKey(function(err, response) {
       expect(response)

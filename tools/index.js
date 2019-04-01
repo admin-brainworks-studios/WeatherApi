@@ -14,7 +14,7 @@ module.exports.currentTimeUnix = function() {
 
 module.exports.currentTimeUnixZeroed = function() {
   // Zero houred local time
-  var time = new Date(Date.now());
+  let time = new Date(Date.now());
   time.setMinutes(0);
   time.setSeconds(0);
   time.setMilliseconds(0);
